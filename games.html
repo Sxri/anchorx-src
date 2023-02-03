@@ -29,7 +29,11 @@
         <h1 style="text-align: center;">Games</h1>
         <h2> </h2>
 
-
+<div class="productholder">
+  <img class="productbox" <img src="/media/public.png"></img>
+  <img class="productbox" <img src="/media/public.png"></img>
+  <img class="productbox" <img src="/media/public.png"></img>
+</div>
         
     </body>
 
@@ -91,6 +95,57 @@ background: -webkit-linear-gradient(#ffffff, #007da3);
 -webkit-background-clip: text;
 }
     
+.productbox {
+        overflow: visible;
+        position: relative;
+        justify-content: center;
+    align-items: center;
+      display: flex;
+    display: -webkit-flex;
+    margin: 1%;
+        inline-size: 240px;
+       
+     
+       
+            border: 1px solid black;
+            width: 400px;
+            height: 250px;
+            border-radius: 10px;
+        font-size: 30px;
+        color: black;
+        background-color: #424700;
+        box-shadow: 0 0 8px #000;
+   
+  
+}
+
+.productbox:hover {
+  width: 410px;
+  height: 260;
+  transition: width .5s, height .5s, transform .5s;
+}
+
+.productholder {
+justify-content: center;
+    align-items: center;
+    display: -webkit-flex;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+  transform: translate(-50%, 70%);
+       
+            border: 1px solid black;
+            width: 1300px;
+            height: 300px;
+       
+            border-radius: 10px;
+        font-size: 30px;
+        color: black;
+        background-color: #424700;
+        box-shadow: 0 0 8px #000;
+}    
+
 h5 {
 
 font-family: Roboto;
