@@ -1,14 +1,329 @@
-<html><head>
+<head>
   <title>AnchorX - Armed Forces</title>
-  
-  <style>body,html,iframe{margin:0;padding:0;height:100%;width:100%;overflow:hidden}.forceIosScrolling{overflow:scroll;-webkit-overflow-scrolling:touch}</style>
-<script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.P0B2vZm_jJk.O/m=gapi_rpc/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_nmCaDbrwZCe_WiNZEgKVKQ-FnSA/cb=gapi.loaded_0?le=scs" async=""></script><script src="https://apis.google.com/js/api.js?checkCookie=1" gapi_processed="true"></script></head>
-
+</head>
 <body>
-<iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" src="https://app-182760.games.s3.yandex.net/182760/yrwcrab8vduar3zd3z8wpgkwdwnlvbn0/index.html" style="overflow: auto;">
-</iframe>
+<html lang="en-us"><head><script src="https://s0.2mdn.net/instream/video/client.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/prebid.js@7.34.0/dist/debugging-standalone.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ArmedForces io - FreezeNova.Games</title>
+	
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+	
+    <script async="" type="text/javascript" src="https://hb.improvedigital.com/pbw/prebid/prebid-idhb-v7.35.min.js"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202301120101/slotcar_library.js"></script><script src="https://partner.googleadservices.com/gampad/cookie.js?domain=html5.gamedistribution.com&amp;callback=_gfp_s_&amp;client=ca-pub-2316275586951220&amp;cookie=ID%3Dbf8a53adab5ebf71-2246a8a7a2da00e5%3AT%3D1674175707%3AS%3DALNI_Ma9Uqo1BIT5idrjFdvywfGdR8ktug&amp;gpic=UID%3D0000092d950e3750%3AT%3D1674175707%3ART%3D1675475235%3AS%3DALNI_MYmeuTB_vC1YI3gKmw4SmhBJoupgg"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202301120101/show_ads_impl.js" id="google_shimpl"></script><script id="gamedistribution-jssdk" src="//html5.api.gamedistribution.com/main.min.js"></script><script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
 
-<script>function loadGapi(){var loaderScript=document.createElement('script');loaderScript.setAttribute('src','https://apis.google.com/js/api.js?checkCookie=1');loaderScript.onload=function(){this.onload=function(){};loadGapiClient();};loaderScript.onreadystatechange=function(){if(this.readyState==='complete'){this.onload();}};(document.head||document.body||document.documentElement).appendChild(loaderScript);}function updateInnerFrame(url,enableInteraction,forceIosScrolling){var urlEl=document.createElement('a');urlEl.setAttribute('href',url);if(urlEl.protocol!="https:"&&urlEl.protocol!="http:"){return;}var iframe=document.getElementById('innerFrame');iframe.src=url;iframe.onload=function(){gapi.rpc.call('..','innerFrameLoaded');};if(enableInteraction){if(forceIosScrolling){var iframeParent=iframe.parentElement;iframeParent.classList.add('forceIosScrolling');}else{iframe.style.overflow='auto';}}else{iframe.style.pointerEvents='none';}}function updateInnerIframeCode(userCode,enableInteraction,forceIosScrolling){gapi.rpc.setup('innerFrame');gapi.rpc.call('innerFrame','updateUserHtmlFrame',undefined,userCode,enableInteraction,forceIosScrolling);}function onPostMessage(ev){if(ev.data['magic']!='SHIC'){return;}var type=ev.data['type'];switch(type){case'resize':var height=ev.data['height'];gapi.rpc.call('..','resize',undefined,height);}}function onGapiInitialized(){gapi.rpc.call('..','gapiInitialized');gapi.rpc.register('updateInnerFrame',updateInnerFrame);gapi.rpc.register('updateInnerIframeCode',updateInnerIframeCode);window.addEventListener('message',onPostMessage);}function loadGapiClient(){gapi.load('gapi.rpc',onGapiInitialized);}if(document.readyState=='complete'){loadGapi();}else{self.addEventListener('load',loadGapi);}</script>
 
+
+	<script>
+	
+	function SubmitLeaderboardScore(newScore)
+	{
+		
+	}
+	
+	function GetLeaderboardEntries()
+	{
+		
+	}
+	
+	function InitApi(_appId) 
+    {
+		var dateNow = new Date();
+		var secondsSinceEpoch = Math.round(dateNow.getTime() / 1000);
+		
+		
+		
+		window.callTime = secondsSinceEpoch - 3;
+		
+		
+		///
+		gameKey = "1a89ecde7c9743899852c1f532cb7972";
+		userId = "";
+		
+		console.log('InitApi ' + gameKey);
+	
+		window["GD_OPTIONS"] = {
+			"debug": false, // Enable debugging console. This will set a value in local storage as well, remove this value if you don't want debugging at all. You can also call it by running gdsdk.openConsole() within your browser console.
+			"gameId": gameKey, // Your gameId which is unique for each one of your games; can be found at your Gamedistribution.com account.
+			"userId": userId, // Your userId which can be found at your Gamedistribution.com account.
+			"onEvent": function(event) {
+				switch (event.name) {
+					case "SDK_GAME_START":
+						//gameInstance.SendMessage('GameDistribution', 'ResumeGame');
+						gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+						
+						if (window.rewardedCallbacks == true)
+						{
+							window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady');
+						}
+						break;
+					case "SDK_GAME_PAUSE":
+						//gameInstance.SendMessage('GameDistribution', 'PauseGame');
+						gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onOpen');
+						break;
+					case "SDK_ERROR":
+						gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');	
+
+						if (window.rewardedCallbacks == true)
+						{
+							window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady');
+						}
+						break;
+					case "SDK_REWARDED_WATCH_COMPLETE":
+						console.log("RewardedSuccess");
+						gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'RewardedOnRewarded');
+						break;
+				}
+			},
+		};
+		
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = '//html5.api.gamedistribution.com/main.min.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'gamedistribution-jssdk'));
+		////
+		
+		
+    }
+	
+	<!-- function myScriptMouseDown() { -->
+		<!-- console.log("myScriptMouseDown"); -->
+		
+		<!-- if (window.firstClickDone == undefined) -->
+		<!-- { -->
+			<!-- window.firstClickDone = true; -->
+			<!-- ExternEval(); -->
+			
+			<!-- document.removeEventListener("mousedown", myScriptMouseDown); -->
+		<!-- } -->
+	<!-- } -->
+	
+	function InitExternEval(_appId) 
+    {
+		console.log("InitExternEval");
+		
+		//ExternEval();
+		
+		if (window.rewardedCallbacks == undefined)
+		{
+			PreloadRewarded();
+		}
+		
+		//document.addEventListener("mousedown", myScriptMouseDown);
+		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'useGDlogic');
+		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'playOffline');
+    }
+    
+    function ExternEval() 
+    {
+		console.log("ExternEval");
+		
+		var dateNow = new Date();
+		var secondsSinceEpoch = Math.round(dateNow.getTime() / 1000);
+		
+		if (window.callTime != undefined && 
+			secondsSinceEpoch - window.callTime > 2)
+		{
+			console.log('ExternEval 2');
+			
+			window.callTime = secondsSinceEpoch;
+			
+			<!-- if (typeof preroll !== 'undefined') -->
+			<!-- { -->
+				<!-- if (window[preroll.config.loaderObjectName] != undefined) -->
+				<!-- { -->
+					<!-- gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onOpen'); -->
+				
+					<!-- try { -->
+						<!-- window[preroll.config.loaderObjectName].refetchAd(ExternEvalResumeGame); -->
+					<!-- } -->
+					<!-- catch(err) { -->
+						<!-- console.log(err.message); -->
+						<!-- gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose'); -->
+					<!-- } -->
+				<!-- } -->
+			<!-- } -->
+			
+			if (typeof gdsdk !== "undefined")
+			{	  
+				gdsdk.showBanner(); 
+			}
+		}
+		
+    }
+	
+	<!-- function ExternEvalResumeGame() -->
+	<!-- { -->
+		<!-- console.log("ExternEvalResumeGame"); -->
+	
+		<!-- gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose'); -->
+	<!-- } -->
+	
+	function PreloadRewarded() 
+	{
+		console.log("PreloadRewarded");
+	
+		if (window.rewardedCallbacks == undefined)
+		{
+			window.rewardedCallbacks = true;
+			
+			try {
+				<!-- window[window.preroll.config.loaderObjectName].registerRewardCallbacks({ -->
+					<!-- onReady:RewardedReady,  -->
+					<!-- onSuccess:RewardedSuccess,  -->
+					<!-- onFail:RewardedFail, -->
+					<!-- onClose:RewardedClose -->
+				<!-- }); -->
+				
+				if (typeof gdsdk !== "undefined")
+				{	  
+					if (gdsdk !== 'undefined' && gdsdk.preloadAd !== 'undefined') {
+					  gdsdk
+						.preloadAd('rewarded')
+						.then(response => {
+						  // A rewarded ad can be shown to user when he/she clicked it.
+						  //gameInstance.SendMessage('GameDistribution', 'RewardedReady');
+						  console.log("Rewarded Ready");
+						  window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady');
+						})
+						.error(error => {
+						  // Any Rewarded ad is not available to user.
+						  //gameInstance.SendMessage('GameDistribution', 'RewardedError');
+						  console.log("Rewarded NOT Ready");
+						  window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedNotReady');
+						});
+					}
+				}
+			}
+			catch(err) {
+				console.log(err.message);
+			}
+		}
+	}
+		
+	function ShowRewarded() 
+	{
+		console.log("ShowRewarded");
+	
+		if (typeof gdsdk !== 'undefined')
+		{
+			if (window.rewardedCallbacks == undefined)
+			{
+				PreloadRewarded();
+			}
+		
+			<!-- if (window[preroll.config.loaderObjectName] != undefined) -->
+			<!-- { -->
+				<!-- gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onOpen'); -->
+			
+				<!-- try { -->
+					<!-- window[preroll.config.loaderObjectName].showRewardAd(); -->
+				<!-- } -->
+				<!-- catch(err) { -->
+					<!-- console.log(err.message); -->
+					<!-- gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose'); -->
+				<!-- } -->
+			<!-- } -->
+			
+			 if (gdsdk !== 'undefined' && gdsdk.showAd !== 'undefined') 
+			 {
+				 gdsdk.showAd('rewarded')
+				.then(response => {
+				  // Ad process done. You can track "SDK_REWARDED_WATCH_COMPLETE" event if that event triggered, that means the user watched the advertisement completely, you can give reward there.
+				  //setTimeout(function(){ window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady'); }, 3000);
+				})
+				.catch(error => {
+				  // An error catched. Please don't give reward here.
+				});
+			 }
+		}
+	
+	}
+	
+	<!-- function RewardedReady() -->
+	<!-- { -->
+		<!-- console.log("RewardedReady"); -->
+		
+		<!-- if (window.rewardedCount == undefined) -->
+		<!-- { -->
+			<!-- window.rewardedCount = 1; -->
+			<!-- window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady'); -->
+		<!-- } -->
+		<!-- else{ -->
+			<!-- window.rewardedCount = window.rewardedCount + 1; -->
+			<!-- //setTimeout(function(){ window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady'); }, 30000); -->
+			<!-- window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady'); -->
+		<!-- } -->
+		
+	<!-- } -->
+	
+	<!-- function RewardedSuccess() -->
+	<!-- { -->
+		<!-- console.log("RewardedSuccess"); -->
+		<!-- gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'RewardedOnRewarded'); -->
+		<!-- //gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose'); -->
+	<!-- } -->
+	
+	<!-- function RewardedFail() -->
+	<!-- { -->
+		<!-- console.log("RewardedFail"); -->
+		<!-- gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'RewardedOnFail'); -->
+		<!-- //gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose'); -->
+	<!-- } -->
+	
+	<!-- function RewardedClose() -->
+	<!-- { -->
+		<!-- console.log("RewardedClose"); -->
+		<!-- gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose'); -->
+	<!-- } -->
+	
+	InitApi(0);
+	
+	
+	</script>
+
+	
+	<script>
+	
+	function FitScreen(){
+       var w = 960;
+       var h = 540;
+	   
+       var availWidth = window.innerWidth;
+       var availHeight = window.innerHeight - 10;
+	   
+       var canvas = document.getElementById("#canvas");
+       if(availWidth/availHeight>w/h){
+         height = availHeight;
+         width = (height*w/h);
+      }else{
+         width = availWidth;
+         height = width*h/w;
+      }
+	  
+      //canvas.width = width;
+      //canvas.height = height;
+	  
+       document.getElementById("gameContainer").style.width=width + "px";
+       document.getElementById("gameContainer").style.height=height + "px";
+	   
+    }
+	
+	var gameInstance = UnityLoader.instantiate("gameContainer", "Build/game.json", {onProgress: UnityProgress});
+	
+	</script>
+
+  <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" id="gdsdk_google_analytics"></script><script type="text/javascript" async="" crossorigin="anonymous" data-ad-client="ca-pub-2316275586951220" data-ad-frequency-hint="30s" allow="autoplay" data-ad-channel="4089988593" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" id="afg" data-checked-head="true"></script><meta http-equiv="origin-trial" content="Az6AfRvI8mo7yiW5fLfj04W21t0ig6aMsGYpIqMTaX60H+b0DkO1uDr+7BrzMcimWzv/X7SXR8jI+uvbV0IJlwYAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+USTya+tNvDPaxUgJooz+LaVk5hPoAxpLvSxjogX4Mk8awCTQ9iop6zJ9d5ldgU7WmHqBlnQB41LHHRFxoaBwoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7FovoGr67TUBYbnY+Z0IKoJbbmRmB8fCyirUGHavNDtD91CiGyHHSA2hDG9r9T3NjUKFi6egL3RbgTwhhcVDwUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><script type="text/javascript" async="" src="https://hb.improvedigital.com/pbw/headerlift.min.js?referer=html5.gamedistribution.com" id="gdsdk_prebid"></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=html5.gamedistribution.com" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=html5.gamedistribution.com"></script><script type="text/javascript" async="" src="https://imasdk.googleapis.com/js/sdkloader/ima3.js" id="gdsdk_ima"></script><meta http-equiv="origin-trial" content="AyzXKL8MdBHvOVVzOBruMH4ejTtc1ZYFY15XURvuVFNIaGRUMEWwUuOwPk/7RTLViwZhNSTz/my1X90KqvXn1wYAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+  <body onfocus="FitScreen();" onload="FitScreen();" onresize="FitScreen();" style="width:100%; height:100%" aria-hidden="false">
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 1018px; height: 572.625px; padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);"><canvas id="#canvas" style="width: 100%; height: 100%; cursor: default;" width="1273" height="716"></canvas><div class="logo Dark" style="display: none;"></div><div class="progress Dark" style="display: none;"><div class="empty" style="width: 0%;"></div><div class="full" style="width: 100%;"></div></div></div>
+    </div>
+  
+<script src="blob:http://html5.gamedistribution.com/11affc5c-78b0-4522-bf97-838473199ed9" id="c6ab3c19acb0d82c38d16835d8e552d6"></script></body></html>
 
 </body></html>
