@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="en-us"><head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Alone. Again.</title>
@@ -9,11 +7,11 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
-      <div id="unity-loading-bar">
+      <canvas id="unity-canvas" width="1200" height="750" style="width: 960px; height: 600px; cursor: none;"></canvas>
+      <div id="unity-loading-bar" style="display: none;">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+          <div id="unity-progress-bar-full" style="width: 100%;"></div>
         </div>
       </div>
       <div id="unity-warning"> </div>
@@ -102,6 +100,7 @@
         });
       };
       document.body.appendChild(script);
-    </script>
-  </body>
-</html>
+    </script><script src="Build/AloneAgain_1.0_WebGL.loader.js"></script>
+  
+
+<script src="Build/AloneAgain_1.0_WebGL.framework.js.gz"></script></body></html>
