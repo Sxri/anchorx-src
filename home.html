@@ -18,14 +18,11 @@
        <link rel="shortcut icon" type="image/png" href="/media/anchorx.png"/>
     </head>
     <body>
-
-        <div class="bg">
-           <video autoplay muted loop>
-               <source>
-                src="media/bgvid.mp4" type="video/mp4" 
-               </source>
-           </video>
-        </div>
+        
+        <video autoplay muted loop id="video">
+  <source src="media/bgvid.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
         
         <div class="topnav">
             <a class="active" href="/home.html">Home</a>
@@ -45,7 +42,9 @@
             
         </div>
         
-    
+        <script>
+    var video = document.getElementById("myVideo");
+</script>   
     </body>
 
 <style>
@@ -162,4 +161,5 @@ topbar {
   color: black;
 }
 </style>
+    
 </html>
